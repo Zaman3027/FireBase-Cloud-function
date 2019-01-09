@@ -13,7 +13,8 @@ var ref = db.ref("/User/");
         data.forEach(value=>{
             keys.push(value.key)
             if(keys.length>10){
-                data.child(keys[9]).ref.remove()
+                var rand = Math.floor((Math.random() * 9) + 1);
+                data.child(keys[0]).ref.remove()
             }
         })
 
